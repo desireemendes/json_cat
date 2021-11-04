@@ -23,7 +23,7 @@ const fetchBreedDescription = function(breedName, cb) {
     breedName = breedName.toLowerCase();
 
     if (breedName === "list") {
-      const descrription = catNames;
+      const description = catNames;
       cb(null, description);
       return;
     }
@@ -32,10 +32,11 @@ const fetchBreedDescription = function(breedName, cb) {
       const description = data[cats].description;
       cb(null, description);
     } else {
-      error = "Breed not found"
+      error = "Breed not found";
       cb(error, null);
       return;
     }
   });
 };
 
+module.exports = { fetchBreedDescription };
